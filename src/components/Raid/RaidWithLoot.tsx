@@ -9,7 +9,7 @@ type Props = Raid;
 const RaidWithLoot: React.FC<Props> = props => {
   const [webhookUrl, setWebhookUrl] = useState<string>("");
   return (
-    <div className="flex flex-col items-baseline w-1/2 h-screen">
+    <div className="flex-shrink-0 flex flex-col items-baseline w-1/2 h-full">
       <div className="flex p-8 overflow-y-auto">
         <div className="flex flex-wrap">
           {props.bosses.map(boss => (

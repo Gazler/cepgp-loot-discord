@@ -5,7 +5,7 @@ import { Boss } from "utils/trafficParser";
 type BossProps = Boss;
 
 const BossCard: React.FC<BossProps> = ({ name, loot, points, date }) => (
-  <div className="flex-shrink-0 m-2 w-64 rounded overflow-hidden shadow-lg border-2 relative">
+  <div className="flex-shrink-0 m-2 w-64 rounded overflow-hidden shadow-lg border-2 bg-white relative">
     <div className="px-6 pt-8 pb-4">
       <div className="font-bold text-xl mb-2">{date.toDateString()}</div>
       <div className="font-bold text-xl mb-2">{name}</div>

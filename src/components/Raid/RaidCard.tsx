@@ -19,7 +19,7 @@ const coverImage = (name: string): string => {
 
 const RaidCard: React.FC<Props> = ({ name, leader, date, bossCount, onClick, active }) => (
   <div
-    className={`flex-shrink-0 m-2 w-64 rounded overflow-hidden shadow-lg cursor-pointer border-2 ${
+    className={`flex-shrink-0 m-2 w-64 rounded overflow-hidden shadow-lg cursor-pointer border-2 bg-white ${
       active ? "border-blue-400" : ""
     }`}
     onClick={onClick}
