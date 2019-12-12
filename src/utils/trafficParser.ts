@@ -72,26 +72,26 @@ const raidBosses: { [key: string]: RaidId } = {
   Ragnaros: RaidId.MOLTEN_CORE
 };
 
-const trashItems = [
-  "Arcanist Belt",
-  "Arcanist Bindings",
-  "Belt of Might",
-  "Bracers of Might",
-  "Cenarion Belt",
-  "Cenarion Bracers",
-  "Earthfury Belt",
-  "Earthfury Bracers",
-  "Felheart Belt",
-  "Felheart Bracers",
-  "Giantstalker's Belt",
-  "Giantstalker's Bracers",
-  "Girdle of Prophecy",
-  "Lawbringer Belt",
-  "Lawbringer Bracers",
-  "Nightslayer Belt",
-  "Nightslayer Bracelets",
-  "Vambraces of Prophecy"
-];
+const trashItems: { [key: string]: RaidId } = {
+  "Arcanist Belt": RaidId.MOLTEN_CORE,
+  "Arcanist Bindings": RaidId.MOLTEN_CORE,
+  "Belt of Might": RaidId.MOLTEN_CORE,
+  "Bracers of Might": RaidId.MOLTEN_CORE,
+  "Cenarion Belt": RaidId.MOLTEN_CORE,
+  "Cenarion Bracers": RaidId.MOLTEN_CORE,
+  "Earthfury Belt": RaidId.MOLTEN_CORE,
+  "Earthfury Bracers": RaidId.MOLTEN_CORE,
+  "Felheart Belt": RaidId.MOLTEN_CORE,
+  "Felheart Bracers": RaidId.MOLTEN_CORE,
+  "Giantstalker's Belt": RaidId.MOLTEN_CORE,
+  "Giantstalker's Bracers": RaidId.MOLTEN_CORE,
+  "Girdle of Prophecy": RaidId.MOLTEN_CORE,
+  "Lawbringer Belt": RaidId.MOLTEN_CORE,
+  "Lawbringer Bracers": RaidId.MOLTEN_CORE,
+  "Nightslayer Belt": RaidId.MOLTEN_CORE,
+  "Nightslayer Bracelets": RaidId.MOLTEN_CORE,
+  "Vambraces of Prophecy": RaidId.MOLTEN_CORE
+};
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
   const prevRaid = currentRaids[newRaid.leader];
@@ -120,11 +120,12 @@ function idForRaid(trafficItem: TrafficItem): string {
 }
 
 function isTrashItem(item: Item): boolean {
-  return trashItems.indexOf(item.name) > -1;
+  return Object.keys(trashItems).indexOf(item.name) > -1;
 }
 
 export default function parse(input: Traffic): Raid[] {
   const currentRaids: { [key: string]: Raid } = {};
+  const pendingTrash: { [key: string]: [Loot] } = {};
   return input.epgp_traffic
     .sort((a, b) => parseInt(a.timestamp, 10) - parseInt(b.timestamp, 10))
     .reduce((acc, trafficItem) => {
@@ -146,10 +147,11 @@ export default function parse(input: Traffic): Raid[] {
           raidId: raidName as RaidId,
           leader: trafficItem.issuer_name,
           date,
-          trash: { loot: new Array<Loot>() },
+          trash: { loot: pendingTrash[leader] ?? new Array<Loot>() },
           bosses: [boss]
         };
         if (isNewRaid(currentRaids, newRaid)) {
+          delete pendingTrash[leader];
           currentRaids[leader] = newRaid;
           acc.push(newRaid);
         } else {
@@ -157,8 +159,6 @@ export default function parse(input: Traffic): Raid[] {
             currentRaids[leader].bosses.push(boss);
           }
         }
-
-        // console.log(date, raid, bossName, points);
       }
 
       if (eventType === EventType.LOOT_GIVEN && trafficItem.item_name && trafficItem.item_id) {
@@ -172,7 +172,13 @@ export default function parse(input: Traffic): Raid[] {
         if (currentRaids[leader]) {
           const loot = { item, receiver, cost };
           if (isTrashItem(item)) {
-            currentRaids[leader].trash.loot.push(loot);
+            if (currentRaids[leader].raidId === trashItems[item.name]) {
+              currentRaids[leader].trash.loot.push(loot);
+            } else {
+              // Loot dropped before the first boss kill.
+              pendingTrash[leader] = pendingTrash[leader] ?? [];
+              pendingTrash[leader].push(loot);
+            }
           } else {
             currentRaids[leader].bosses[currentRaids[leader].bosses.length - 1].loot.push(loot);
           }
