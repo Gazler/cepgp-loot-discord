@@ -23,6 +23,7 @@
     "start": "npm-run-all -p start:css start:js",
     "build": "npm-run-all build:css build:js",
     "start:js": "react-scripts start",
+    "test": "react-scripts test",
     "build:js": "react-scripts build",
     "format": "prettier --write 'src/**/*.tsx' 'src/**/*.ts' src/*.ts src/*.tsx --ignore-path=.prettierignore --print-width 99",
     "start:css": "postcss src/css/tailwind.src.css -o src/tailwind.css -w",
