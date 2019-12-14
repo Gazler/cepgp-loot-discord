@@ -39,10 +39,12 @@ export default function publish(url: string, raid: Raid) {
     });
   }
 
+  const totalEp = raid.bosses.reduce((acc, { points }) => acc + points, 0)
+
   const data = {
     embeds: [
       {
-        description: "**Loot Distribution**",
+        description: `Loot Master: **${raid.leader}** Total EP for Raid: \`${totalEp}\``,
         color: 8924413,
         author: {
           name: `${raid.date.toDateString()} - ${raid.name}`,
