@@ -1,30 +1,34 @@
 import React from "react";
+import { RaidId } from "utils/trafficParser";
+import moltenCoreImg from "images/molten-core.jpg";
+import onyxiaImg from "images/onyxia.jpg";
 
 type Props = {
   name: string;
   leader: string;
   date: Date;
+  raidId: RaidId,
   onClick: () => void;
   active?: boolean;
   bossCount: number;
 };
 
-const coverImage = (name: string): string => {
-  if (name === "Onyxia") {
-    return "https://vignette.wikia.nocookie.net/wowwiki/images/4/46/Onyxia%27s_Lair_loading_screen.jpg/revision/latest?cb=20110217222549";
+const coverImage = (raidId: RaidId): string => {
+  if (raidId === RaidId.ONYXIA) {
+    return onyxiaImg;
   }
 
-  return "https://vignette.wikia.nocookie.net/wowwiki/images/2/20/Molten_Core_loading_screen.jpg/revision/latest?cb=20110217231319";
+  return moltenCoreImg;
 };
 
-const RaidCard: React.FC<Props> = ({ name, leader, date, bossCount, onClick, active }) => (
+const RaidCard: React.FC<Props> = ({ name, leader, date, bossCount, onClick, active, raidId }) => (
   <div
-    className={`flex-shrink-0 m-2 w-64 rounded overflow-hidden shadow-lg cursor-pointer border-2 bg-white ${
+    className={`flex-shrink-0 m-2 w-64 rounded-lg overflow-hidden shadow-lg cursor-pointer border-2 bg-white ${
       active ? "border-blue-400" : ""
     }`}
     onClick={onClick}
   >
-    <img className="w-full h-32 object-cover" src={coverImage(name)} alt={name} />
+    <img className="w-full h-32 object-cover" src={coverImage(raidId)} alt={name} />
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{name}</div>
       <div className="font text-lg mb-2">{leader}</div>
