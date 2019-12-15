@@ -7,7 +7,7 @@ type Props = {
   name: string;
   leader: string;
   date: Date;
-  raidId: RaidId,
+  raidId: RaidId;
   onClick: () => void;
   active?: boolean;
   bossCount: number;

@@ -39,7 +39,7 @@ export default function publish(url: string, raid: Raid) {
     });
   }
 
-  const totalEp = raid.bosses.reduce((acc, { points }) => acc + points, 0)
+  const totalEp = raid.bosses.reduce((acc, { points }) => acc + points, 0);
 
   const data = {
     embeds: [

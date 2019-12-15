@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RaidCard from "components/Raid/RaidCard";
 import RaidWithLoot from "components/Raid/RaidWithLoot";
 import parse, { Raid } from "utils/trafficParser";
 import loot from "images/loot.png";
+import rawTraffic from "output.json";
 import { ReactComponent as Logo } from "images/treasure-chest-duotone.svg";
 import "./tailwind.css";
 
@@ -16,6 +17,10 @@ const App: React.FC = () => {
     setRaids(raids);
     selectRaid(raids[0]);
   };
+
+  useEffect(() => {
+    parseRaids({ target: { value: JSON.stringify(rawTraffic) } });
+  }, []);
 
   const reset = () => {
     setTraffic("");
