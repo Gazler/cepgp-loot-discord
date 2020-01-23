@@ -129,6 +129,10 @@ export default function parse(input: Traffic): Raid[] {
   return input.epgp_traffic
     .sort((a, b) => parseInt(a.timestamp, 10) - parseInt(b.timestamp, 10))
     .reduce((acc, trafficItem) => {
+      if (!trafficItem.timestamp) {
+        return acc;
+      }
+
       const date = new Date(parseInt(trafficItem.timestamp, 10) * 1000);
       const eventType = getEventType(trafficItem);
 
