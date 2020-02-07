@@ -1,19 +1,24 @@
 import React from "react";
 import { RaidId } from "utils/trafficParser";
 import moltenCoreImg from "images/molten-core.jpg";
+import blackwingLairImg from "images/blackwing-lair.jpg";
 import onyxiaImg from "images/onyxia.jpg";
 
 type Props = {
   name: string;
   leader: string;
   date: Date;
-  raidId: RaidId,
+  raidId: RaidId;
   onClick: () => void;
   active?: boolean;
   bossCount: number;
 };
 
 const coverImage = (raidId: RaidId): string => {
+  if (raidId === RaidId.BLACKWING_LAIR) {
+    return blackwingLairImg;
+  }
+
   if (raidId === RaidId.ONYXIA) {
     return onyxiaImg;
   }

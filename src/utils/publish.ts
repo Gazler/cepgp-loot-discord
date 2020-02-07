@@ -5,6 +5,11 @@ const raidIcons = {
     icon: "https://www.heroesfire.com/images/wikibase/icon/talents/cauterize-wounds.png",
     image: "https://art.hearthstonejson.com/v1/256x/TB_EVILBRM_Ragnaros01.jpg"
   },
+  [RaidId.BLACKWING_LAIR]: {
+    icon:
+      "https://vignette.wikia.nocookie.net/wowwiki/images/1/1e/IconSmall_Nefarian.gif/revision/latest?cb=20090827161607",
+    image: "https://art.hearthstonejson.com/v1/256x/BRM_030.jpg"
+  },
   [RaidId.ONYXIA]: {
     icon:
       "https://vignette.wikia.nocookie.net/wowwiki/images/0/02/IconSmall_Onyxia.gif/revision/latest?cb=20090827161643",
@@ -39,7 +44,7 @@ export default function publish(url: string, raid: Raid) {
     });
   }
 
-  const totalEp = raid.bosses.reduce((acc, { points }) => acc + points, 0)
+  const totalEp = raid.bosses.reduce((acc, { points }) => acc + points, 0);
 
   const data = {
     embeds: [

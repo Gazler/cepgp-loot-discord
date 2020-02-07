@@ -56,7 +56,8 @@ export type Raid = {
 
 export enum RaidId {
   ONYXIA = "Onyxia",
-  MOLTEN_CORE = "Molten Core"
+  MOLTEN_CORE = "Molten Core",
+  BLACKWING_LAIR = "Blackwing Lair"
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -70,7 +71,16 @@ const raidBosses: { [key: string]: RaidId } = {
   "Sulfuron Harbinger": RaidId.MOLTEN_CORE,
   "Golemagg the Incinerator": RaidId.MOLTEN_CORE,
   "Majordomo Executus": RaidId.MOLTEN_CORE,
-  Ragnaros: RaidId.MOLTEN_CORE
+  Ragnaros: RaidId.MOLTEN_CORE,
+
+  "Razorgore the Untamed": RaidId.BLACKWING_LAIR,
+  "Vaelastrasz the Corrupt": RaidId.BLACKWING_LAIR,
+  "Broodlord Lashlayer": RaidId.BLACKWING_LAIR,
+  Firemaw: RaidId.BLACKWING_LAIR,
+  Ebonroc: RaidId.BLACKWING_LAIR,
+  Flamegor: RaidId.BLACKWING_LAIR,
+  Chromaggus: RaidId.BLACKWING_LAIR,
+  Nefarian: RaidId.BLACKWING_LAIR
 };
 
 const trashItems: { [key: string]: RaidId } = {
@@ -91,7 +101,17 @@ const trashItems: { [key: string]: RaidId } = {
   "Lawbringer Bracers": RaidId.MOLTEN_CORE,
   "Nightslayer Belt": RaidId.MOLTEN_CORE,
   "Nightslayer Bracelets": RaidId.MOLTEN_CORE,
-  "Vambraces of Prophecy": RaidId.MOLTEN_CORE
+  "Vambraces of Prophecy": RaidId.MOLTEN_CORE,
+
+  "Boots of Pure Thought": RaidId.BLACKWING_LAIR,
+  "Cloak of Draconic Might": RaidId.BLACKWING_LAIR,
+  "Draconic Maul": RaidId.BLACKWING_LAIR,
+  "Doom's Edge": RaidId.BLACKWING_LAIR,
+  "Essence Gatherer": RaidId.BLACKWING_LAIR,
+  "Band of Dark Dominion": RaidId.BLACKWING_LAIR,
+  "Draconic Avenger": RaidId.BLACKWING_LAIR,
+  "Interlaced Shadow Jerkin": RaidId.BLACKWING_LAIR,
+  "Ringo's Blizzard Boots": RaidId.BLACKWING_LAIR
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
@@ -166,14 +186,19 @@ export default function parse(input: Traffic): Raid[] {
         }
       }
 
-      if ((eventType === EventType.LOOT_GIVEN || eventType === EventType.DISENCHANT) && trafficItem.item_name && trafficItem.item_id) {
+      if (
+        (eventType === EventType.LOOT_GIVEN || eventType === EventType.DISENCHANT) &&
+        trafficItem.item_name &&
+        trafficItem.item_id
+      ) {
         const cost = parseInt(trafficItem.gp_after, 10) - parseInt(trafficItem.gp_before, 10);
         const item: Item = {
           name: trafficItem.item_name,
           id: parseInt(trafficItem.item_id, 10)
         };
         const leader = trafficItem.issuer_name;
-        const receiver = eventType === EventType.LOOT_GIVEN ? trafficItem.target_name : "DISENCHANT";
+        const receiver =
+          eventType === EventType.LOOT_GIVEN ? trafficItem.target_name : "DISENCHANT";
         if (currentRaids[leader]) {
           const loot = { item, receiver, cost };
           if (isTrashItem(item)) {
