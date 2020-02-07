@@ -18,6 +18,7 @@ export type Traffic = {
 enum EventType {
   LOOT_GIVEN,
   BOSS_KILL,
+  DISENCHANT,
   OTHER
 }
 
@@ -165,14 +166,14 @@ export default function parse(input: Traffic): Raid[] {
         }
       }
 
-      if (eventType === EventType.LOOT_GIVEN && trafficItem.item_name && trafficItem.item_id) {
+      if ((eventType === EventType.LOOT_GIVEN || eventType === EventType.DISENCHANT) && trafficItem.item_name && trafficItem.item_id) {
         const cost = parseInt(trafficItem.gp_after, 10) - parseInt(trafficItem.gp_before, 10);
         const item: Item = {
           name: trafficItem.item_name,
           id: parseInt(trafficItem.item_id, 10)
         };
         const leader = trafficItem.issuer_name;
-        const receiver = trafficItem.target_name;
+        const receiver = eventType === EventType.LOOT_GIVEN ? trafficItem.target_name : "DISENCHANT";
         if (currentRaids[leader]) {
           const loot = { item, receiver, cost };
           if (isTrashItem(item)) {
@@ -209,7 +210,11 @@ function getPoints({ action }: TrafficItem): number {
   return parseInt(action.substr(index));
 }
 
-function getEventType({ target_name, item_name }: TrafficItem): EventType {
+function getEventType({ target_name, item_name, action }: TrafficItem): EventType {
+  if (target_name === "" && action === "Not EPGP Moderated") {
+    return EventType.DISENCHANT;
+  }
+
   if (item_name) {
     return EventType.LOOT_GIVEN;
   }
