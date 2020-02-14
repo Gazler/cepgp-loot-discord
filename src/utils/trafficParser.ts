@@ -191,7 +191,7 @@ export default function parse(input: Traffic): Raid[] {
         trafficItem.item_name &&
         trafficItem.item_id
       ) {
-        const cost = parseInt(trafficItem.gp_after, 10) - parseInt(trafficItem.gp_before, 10);
+        const cost = parseInt(trafficItem.gp_after, 10) - parseInt(trafficItem.gp_before, 10) || 0;
         const item: Item = {
           name: trafficItem.item_name,
           id: parseInt(trafficItem.item_id, 10)
@@ -236,7 +236,7 @@ function getPoints({ action }: TrafficItem): number {
 }
 
 function getEventType({ target_name, item_name, action }: TrafficItem): EventType {
-  if (target_name === "" && action === "Not EPGP Moderated") {
+  if (target_name === "" && (action === "Not EPGP Moderated" || action === "Manually Awarded")) {
     return EventType.DISENCHANT;
   }
 
