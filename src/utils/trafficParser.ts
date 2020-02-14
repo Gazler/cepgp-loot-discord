@@ -244,7 +244,7 @@ function getEventType({ target_name, item_name, action }: TrafficItem): EventTyp
     return EventType.LOOT_GIVEN;
   }
 
-  if (target_name === "Raid") {
+  if (target_name === "Raid" && action.toLowerCase().indexOf("bonus") === -1) {
     return EventType.BOSS_KILL;
   }
 
