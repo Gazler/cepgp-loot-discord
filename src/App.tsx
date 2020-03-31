@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import RaidCard from "components/Raid/RaidCard";
 import RaidWithLoot from "components/Raid/RaidWithLoot";
-import parse, { Raid } from "utils/trafficParser";
+import parse, { dataFromLua, Raid } from "utils/trafficParser";
 import loot from "images/loot.png";
 import { ReactComponent as Logo } from "images/treasure-chest-duotone.svg";
 import "./tailwind.css";
+
 
 const App: React.FC = () => {
   const [raids, setRaids] = useState<Raid[]>([]);
   const [currentRaid, selectRaid] = useState<Raid>();
   const [traffic, setTraffic] = useState<string>("");
   const parseRaids = (e: any) => {
-    const raids = parse(JSON.parse(e.target.value));
-    setTraffic(JSON.stringify(JSON.parse(e.target.value), null, 2));
+    const data = dataFromLua(e.target.value);
+    const raids = parse(data);
+    setTraffic(JSON.stringify(data, null, 2));
     setRaids(raids);
     selectRaid(raids[0]);
   };
@@ -47,7 +49,7 @@ const App: React.FC = () => {
       <div className="flex flex-grow h-full">
         <div className="flex flex-col flex-shrink-0 w-1/4 p-8 h-full">
           <textarea
-            placeholder="paste traffic here"
+            placeholder="paste CEPGP.lua here"
             className="w-full flex-grow border p-2 border-gray-600 text-gray-800"
             value={traffic}
             onChange={parseRaids}
@@ -65,27 +67,12 @@ const App: React.FC = () => {
               <h2 className="text-2xl font-bold text-purple-600">Instructions</h2>
               <h3 className="text-xl text-purple-600 mt-4">Export the JSON</h3>
               <p className="mt-2">
-                To publish your raid loot to discord, you will need to export the traffic log to
-                JSON from the addon.
+                To publish your raid loot to discord, you will need to paste the CEPGP.lua file.
+                <br />You can find this file in "_classic/WTF/Account/ACCOUNT_NAME/SavedVariables"
               </p>
-              <ol className="mt-2 ml-2 pl-4 list-decimal">
-                <li className="pl-1">Open World of Warcraft Classic</li>
-                <li className="pl-1">log in to a character that can see officer notes</li>
-                <li className="pl-1">
-                  type <pre className="inline">/cep show</pre>
-                </li>
-                <li className="pl-1">
-                  Navigate to Guild &gt; View EPGP Traffic &gt; Export EPGP Traffic
-                </li>
-                <li className="pl-1">Click Format to JSON</li>
-                <li className="pl-1">
-                  Copy and paste the contents into the input on the left of this page
-                </li>
-              </ol>
-
               <h3 className="text-xl text-purple-600 mt-4">Select a Raid</h3>
               <p className="mt-2">
-                After pasting the JSON, you will be given the option to select a raid.
+                After pasting the LUA, you will be given the option to select a raid.
                 <br />
                 You can select a raid and publish to a discord channel.
               </p>

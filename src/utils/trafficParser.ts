@@ -144,6 +144,50 @@ function isTrashItem(item: Item): boolean {
   return Object.keys(trashItems).indexOf(item.name) > -1;
 }
 
+declare var fengari: any;
+
+export function dataFromLua(input: string): any {
+  const table = window.fengari.load(input + "\n return CEPGP")();
+  const traffic = table.get("Traffic");
+  let i = 1;
+  let entry;
+  const output = [];
+  while (entry = traffic.get(i)) {
+    i++;
+    const target_name = entry.get(1);
+    const issuer_name = entry.get(2);
+    const action = entry.get(3);
+    const ep_before = entry.get(4);
+    const ep_after = entry.get(5);
+    const gp_before = entry.get(6);
+    const gp_after = entry.get(7);
+    const item = entry.get(8);
+    const timestamp = entry.get(9);
+
+    const trafficEntry: any = {
+      target_name,
+      issuer_name,
+      action,
+      ep_before,
+      ep_after,
+      gp_before,
+      gp_after,
+      timestamp
+    };
+
+    let reg = /\|H?item:(\d+).*\|h\[([^\]]*)/;
+    if (item) {
+      const matches = item.match(reg);
+      if (matches && matches.length > 2) {
+        trafficEntry.item_id = matches[1];
+        trafficEntry.item_name = matches[2];
+      }
+    }
+    output.push(trafficEntry);
+  }
+  return {epgp_traffic: output};
+}
+
 export default function parse(input: Traffic): Raid[] {
   const currentRaids: { [key: string]: Raid } = {};
   const pendingTrash: { [key: string]: [Loot] } = {};
