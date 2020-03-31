@@ -20,7 +20,7 @@ const RaidWithLoot: React.FC<Props> = props => {
         </div>
       </div>
       <div className="flex-grow"></div>
-      <div className="h-16 w-full flex-shrink-0 bg-purple-600 flex items-center pl-8">
+      <div className="h-24 w-full flex-shrink-0 bg-purple-600 flex items-center pl-8 items-baseline pt-1">
         <div className="flex-grow"></div>
         <div className="h-8 mr-4">
           <input
