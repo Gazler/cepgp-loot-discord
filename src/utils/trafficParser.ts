@@ -288,7 +288,9 @@ function getEventType({ target_name, item_name, action }: TrafficItem): EventTyp
     return EventType.LOOT_GIVEN;
   }
 
-  if (target_name === "Raid" && action.toLowerCase().indexOf("bonus") === -1) {
+  const isBoss = Object.keys(raidBosses).find((boss) => action.indexOf(boss) > -1);
+
+  if (target_name === "Raid" && isBoss) {
     return EventType.BOSS_KILL;
   }
 
