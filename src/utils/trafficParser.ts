@@ -62,6 +62,7 @@ export enum RaidId {
 
 const raidBosses: { [key: string]: RaidId } = {
   Onyxia: RaidId.ONYXIA,
+
   Lucifron: RaidId.MOLTEN_CORE,
   Magmadar: RaidId.MOLTEN_CORE,
   Gehennas: RaidId.MOLTEN_CORE,
@@ -80,7 +81,31 @@ const raidBosses: { [key: string]: RaidId } = {
   Ebonroc: RaidId.BLACKWING_LAIR,
   Flamegor: RaidId.BLACKWING_LAIR,
   Chromaggus: RaidId.BLACKWING_LAIR,
-  Nefarian: RaidId.BLACKWING_LAIR
+  Nefarian: RaidId.BLACKWING_LAIR,
+
+  // ruRU
+
+  Ониксия: RaidId.ONYXIA,
+
+  Люцифрон: RaidId.MOLTEN_CORE,
+  Магмадар: RaidId.MOLTEN_CORE,
+  Гееннас: RaidId.MOLTEN_CORE,
+  Гарр: RaidId.MOLTEN_CORE,
+  "Барон Геддон": RaidId.MOLTEN_CORE,
+  Шаззрах: RaidId.MOLTEN_CORE,
+  "Предвестник Сульфурон": RaidId.MOLTEN_CORE,
+  "Маг-лорд из клана Гордок": RaidId.MOLTEN_CORE,
+  "Мажордом Экзекутус": RaidId.MOLTEN_CORE,
+  Рагнарос: RaidId.MOLTEN_CORE,
+
+  "Бритвосмерт Неукротимый": RaidId.BLACKWING_LAIR,
+  "Валестраз Порочный": RaidId.BLACKWING_LAIR,
+  "Предводитель драконов Разящий Бич": RaidId.BLACKWING_LAIR,
+  Огнечрев: RaidId.BLACKWING_LAIR,
+  Черноскал: RaidId.BLACKWING_LAIR,
+  Пламегор: RaidId.BLACKWING_LAIR,
+  Хроммагус: RaidId.BLACKWING_LAIR,
+  Нефариан: RaidId.BLACKWING_LAIR
 };
 
 const trashItems: { [key: string]: RaidId } = {
