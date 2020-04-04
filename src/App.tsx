@@ -6,7 +6,6 @@ import loot from "images/loot.png";
 import { ReactComponent as Logo } from "images/treasure-chest-duotone.svg";
 import "./tailwind.css";
 
-
 const App: React.FC = () => {
   const [raids, setRaids] = useState<Raid[]>([]);
   const [currentRaid, selectRaid] = useState<Raid>();
@@ -65,10 +64,11 @@ const App: React.FC = () => {
           {raids.length === 0 && (
             <div className="pr-16">
               <h2 className="text-2xl font-bold text-purple-600">Instructions</h2>
-              <h3 className="text-xl text-purple-600 mt-4">Export the JSON</h3>
+              <h3 className="text-xl text-purple-600 mt-4">Paste the LUA</h3>
               <p className="mt-2">
                 To publish your raid loot to discord, you will need to paste the CEPGP.lua file.
-                <br />You can find this file in "_classic/WTF/Account/ACCOUNT_NAME/SavedVariables"
+                <br />
+                You can find this file in "_classic/WTF/Account/ACCOUNT_NAME/SavedVariables"
               </p>
               <h3 className="text-xl text-purple-600 mt-4">Select a Raid</h3>
               <p className="mt-2">

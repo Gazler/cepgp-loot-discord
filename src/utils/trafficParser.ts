@@ -152,7 +152,7 @@ export function dataFromLua(input: string): any {
   let i = 1;
   let entry;
   const output = [];
-  while (entry = traffic.get(i)) {
+  while ((entry = traffic.get(i))) {
     i++;
     const target_name = entry.get(1);
     const issuer_name = entry.get(2);
@@ -185,7 +185,7 @@ export function dataFromLua(input: string): any {
     }
     output.push(trafficEntry);
   }
-  return {epgp_traffic: output};
+  return { epgp_traffic: output };
 }
 
 export default function parse(input: Traffic): Raid[] {

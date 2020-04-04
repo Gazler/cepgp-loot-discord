@@ -27,7 +27,7 @@ function lootString(loot: Loot[]) {
   return lootString ? `${lootString}\n` : "*(No Loot)*\n";
 }
 
-export default function publish(url: string, raid: Raid) {
+export default function publish(url: string, raid: Raid)  {
   const fields = raid.bosses.map(boss => {
     return {
       name: `**${boss.name}**⠀⠀`,
@@ -63,19 +63,11 @@ export default function publish(url: string, raid: Raid) {
     ]
   };
 
-  console.log(data);
-
-  try {
-    fetch(url, {
-      method: "POST", // or 'PUT'
-      body: JSON.stringify(data), // data can be `string` or {object}!
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-      // .then((resp) => resp.json())
-      .then(console.log);
-  } catch (error) {
-    console.error("Error:", error);
-  }
+  return fetch(url, {
+    method: "POST", // or 'PUT'
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
 }
