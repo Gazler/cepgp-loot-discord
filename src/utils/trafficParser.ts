@@ -109,34 +109,34 @@ const raidBosses: { [key: string]: RaidId } = {
 };
 
 const trashItems: { [key: string]: RaidId } = {
-  "Arcanist Belt": RaidId.MOLTEN_CORE,
-  "Arcanist Bindings": RaidId.MOLTEN_CORE,
-  "Belt of Might": RaidId.MOLTEN_CORE,
-  "Bracers of Might": RaidId.MOLTEN_CORE,
-  "Cenarion Belt": RaidId.MOLTEN_CORE,
-  "Cenarion Bracers": RaidId.MOLTEN_CORE,
-  "Earthfury Belt": RaidId.MOLTEN_CORE,
-  "Earthfury Bracers": RaidId.MOLTEN_CORE,
-  "Felheart Belt": RaidId.MOLTEN_CORE,
-  "Felheart Bracers": RaidId.MOLTEN_CORE,
-  "Giantstalker's Belt": RaidId.MOLTEN_CORE,
-  "Giantstalker's Bracers": RaidId.MOLTEN_CORE,
-  "Girdle of Prophecy": RaidId.MOLTEN_CORE,
-  "Lawbringer Belt": RaidId.MOLTEN_CORE,
-  "Lawbringer Bracers": RaidId.MOLTEN_CORE,
-  "Nightslayer Belt": RaidId.MOLTEN_CORE,
-  "Nightslayer Bracelets": RaidId.MOLTEN_CORE,
-  "Vambraces of Prophecy": RaidId.MOLTEN_CORE,
+  "16802": RaidId.MOLTEN_CORE, // Arcanist Belt
+  "16799": RaidId.MOLTEN_CORE, // Arcanist Bindings
+  "16864": RaidId.MOLTEN_CORE, // Belt of Might
+  "16861": RaidId.MOLTEN_CORE, // Bracers of Might
+  "16828": RaidId.MOLTEN_CORE, // Cenarion Belt
+  "16830": RaidId.MOLTEN_CORE, // Cenarion Bracers
+  "16838": RaidId.MOLTEN_CORE, // Earthfury Belt
+  "16840": RaidId.MOLTEN_CORE, // Earthfury Bracers
+  "16806": RaidId.MOLTEN_CORE, // Felheart Belt
+  "16804": RaidId.MOLTEN_CORE, // Felheart Bracers
+  "16851": RaidId.MOLTEN_CORE, // Giantstalker's Belt
+  "16850": RaidId.MOLTEN_CORE, // Giantstalker's Bracers
+  "16817": RaidId.MOLTEN_CORE, // Girdle of Prophecy
+  "16819": RaidId.MOLTEN_CORE, // Vambraces of Prophecy
+  "16858": RaidId.MOLTEN_CORE, // Lawbringer Belt
+  "16857": RaidId.MOLTEN_CORE, // Lawbringer Bracers
+  "16827": RaidId.MOLTEN_CORE, // Nightslayer Belt
+  "16825": RaidId.MOLTEN_CORE, // Nightslayer Bracelets
 
-  "Boots of Pure Thought": RaidId.BLACKWING_LAIR,
-  "Cloak of Draconic Might": RaidId.BLACKWING_LAIR,
-  "Draconic Maul": RaidId.BLACKWING_LAIR,
-  "Doom's Edge": RaidId.BLACKWING_LAIR,
-  "Essence Gatherer": RaidId.BLACKWING_LAIR,
-  "Band of Dark Dominion": RaidId.BLACKWING_LAIR,
-  "Draconic Avenger": RaidId.BLACKWING_LAIR,
-  "Interlaced Shadow Jerkin": RaidId.BLACKWING_LAIR,
-  "Ringo's Blizzard Boots": RaidId.BLACKWING_LAIR
+  "19437": RaidId.BLACKWING_LAIR, // Boots of Pure Thought
+  "19436": RaidId.BLACKWING_LAIR, // Cloak of Draconic Might
+  "19358": RaidId.BLACKWING_LAIR, // Draconic Maul
+  "19362": RaidId.BLACKWING_LAIR, // Doom's Edge
+  "19435": RaidId.BLACKWING_LAIR, // Essence Gatherer
+  "19434": RaidId.BLACKWING_LAIR, // Band of Dark Dominion
+  "19354": RaidId.BLACKWING_LAIR, // Draconic Avenger
+  "19439": RaidId.BLACKWING_LAIR, // Interlaced Shadow Jerkin
+  "19438": RaidId.BLACKWING_LAIR // Ringo's Blizzard Boots
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
@@ -166,7 +166,7 @@ function idForRaid(trafficItem: TrafficItem): string {
 }
 
 function isTrashItem(item: Item): boolean {
-  return Object.keys(trashItems).indexOf(item.name) > -1;
+  return Object.keys(trashItems).indexOf(item.id.toString()) > -1;
 }
 
 declare var fengari: any;
@@ -271,7 +271,7 @@ export default function parse(input: Traffic): Raid[] {
         if (currentRaids[leader]) {
           const loot = { item, receiver, cost };
           if (isTrashItem(item)) {
-            if (currentRaids[leader].raidId === trashItems[item.name]) {
+            if (currentRaids[leader].raidId === trashItems[item.id]) {
               currentRaids[leader].trash.loot.push(loot);
             } else {
               // Loot dropped before the first boss kill.
@@ -313,7 +313,7 @@ function getEventType({ target_name, item_name, action }: TrafficItem): EventTyp
     return EventType.LOOT_GIVEN;
   }
 
-  const isBoss = Object.keys(raidBosses).find((boss) => action.indexOf(boss) > -1);
+  const isBoss = Object.keys(raidBosses).find(boss => action.indexOf(boss) > -1);
 
   if (target_name === "Raid" && isBoss) {
     return EventType.BOSS_KILL;
