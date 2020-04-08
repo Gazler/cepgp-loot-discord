@@ -32,7 +32,7 @@ const RaidWithLoot: React.FC<Props> = props => {
         }, 1000);
       };
       publish(webhookUrl, props)
-        .then((response) => {
+        .then(response => {
           if (response.ok) {
             reset("Posted");
           } else {
@@ -67,12 +67,18 @@ const RaidWithLoot: React.FC<Props> = props => {
         <div className="flex-grow"></div>
         <div className="h-8 mr-4">
           <div className="inline mr-4 text-white cursor-pointer">
-            <label className="cursor-pointer" htmlFor="saveWebhook">Save Webhook URL</label>
-            <input type="checkbox"
-                   id="saveWebhook"
-                   className="ml-2 cursor-pointer"
-                   checked={saveToLocalStorage}
-                   onChange={() => { setSaveToLocalStorage((val) => !val) }} />
+            <label className="cursor-pointer" htmlFor="saveWebhook">
+              Save Webhook URL
+            </label>
+            <input
+              type="checkbox"
+              id="saveWebhook"
+              className="ml-2 cursor-pointer"
+              checked={saveToLocalStorage}
+              onChange={() => {
+                setSaveToLocalStorage(val => !val);
+              }}
+            />
           </div>
           <input
             className="p-2 mr-2"
