@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import RaidCard from "components/Raid/RaidCard";
 import RaidWithLoot from "components/Raid/RaidWithLoot";
 import parse, { dataFromLua, Raid } from "utils/trafficParser";
 import loot from "images/loot.png";
 import { ReactComponent as Logo } from "images/treasure-chest-duotone.svg";
+import {useDropzone} from "react-dropzone";
 import "./tailwind.css";
 
 const App: React.FC = () => {
+  const onDrop = useCallback((acceptedFiles: any) => {
+    const reader = new FileReader()
+
+    reader.onabort = () => console.log('file reading was aborted')
+    reader.onerror = () => console.log('file reading has failed')
+    reader.onload = () => {
+      // Do whatever you want with the file contents
+      const binaryStr = reader.result
+      const data = dataFromLua(binaryStr as string);
+      const raids = parse(data);
+      setTraffic(JSON.stringify(data, null, 2));
+      setRaids(raids);
+      selectRaid(raids[0]);
+    }
+    reader.readAsText(acceptedFiles[0]);
+  }, [])
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDragEnter: null, onDragOver: null, onDragLeave: null, multiple: false, onDrop})
+
   const [raids, setRaids] = useState<Raid[]>([]);
   const [currentRaid, selectRaid] = useState<Raid>();
   const [traffic, setTraffic] = useState<string>("");
@@ -46,9 +65,9 @@ const App: React.FC = () => {
         </div>
       </nav>
       <div className="flex flex-grow h-full">
-        <div className="flex flex-col flex-shrink-0 w-1/4 p-8 h-full">
+        <div className="flex flex-col flex-shrink-0 w-1/4 p-8 h-full" {...getRootProps()}>
           <textarea
-            placeholder="paste CEPGP.lua here"
+            placeholder="paste CEPGP.lua here or drop file here"
             className="w-full flex-grow border p-2 border-gray-600 text-gray-800"
             value={traffic}
             onChange={parseRaids}
