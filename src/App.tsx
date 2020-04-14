@@ -38,6 +38,7 @@ const App: React.FC = () => {
                 className="block text-purple-200 mr-4"
                 href="https://github.com/gazler/cepgp-loot-discord"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
