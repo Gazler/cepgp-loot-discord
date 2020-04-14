@@ -172,8 +172,7 @@ function isTrashItem(item: Item): boolean {
 declare var fengari: any;
 
 export function dataFromLua(input: string): any {
-  const table = window.fengari.load(input + "\n return CEPGP")();
-  const traffic = table.get("Traffic");
+  const traffic = window.fengari.load("TRAFFIC=false\n" + input + "\n return (TRAFFIC or CEPGP.Traffic)")();
   let i = 1;
   let entry;
   const output = [];
