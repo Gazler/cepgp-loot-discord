@@ -57,7 +57,8 @@ export type Raid = {
 export enum RaidId {
   ONYXIA = "Onyxia",
   MOLTEN_CORE = "Molten Core",
-  BLACKWING_LAIR = "Blackwing Lair"
+  BLACKWING_LAIR = "Blackwing Lair",
+  ZUL_GURUB = "Zul'Gurub"
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -83,6 +84,21 @@ const raidBosses: { [key: string]: RaidId } = {
   Chromaggus: RaidId.BLACKWING_LAIR,
   Nefarian: RaidId.BLACKWING_LAIR,
 
+  "High Priest Venoxis": RaidId.ZUL_GURUB,
+  "High Priestess Jeklik": RaidId.ZUL_GURUB,
+  "High Priestess Mar'li": RaidId.ZUL_GURUB,
+  "High Priest Thekal": RaidId.ZUL_GURUB,
+  "High Priestess Arlokk": RaidId.ZUL_GURUB,
+  Hakkar: RaidId.ZUL_GURUB,
+  "Bloodlord Mandokir": RaidId.ZUL_GURUB,
+  "Gri'lek": RaidId.ZUL_GURUB,
+  "Hazza'rah": RaidId.ZUL_GURUB,
+  Renataki: RaidId.ZUL_GURUB,
+  Wushoolay: RaidId.ZUL_GURUB,
+  "The Edge of Madness": RaidId.ZUL_GURUB,
+  "Gahz'ranka": RaidId.ZUL_GURUB,
+  "Jin'do the Hexxer": RaidId.ZUL_GURUB,
+
   // ruRU
 
   Ониксия: RaidId.ONYXIA,
@@ -105,7 +121,23 @@ const raidBosses: { [key: string]: RaidId } = {
   Черноскал: RaidId.BLACKWING_LAIR,
   Пламегор: RaidId.BLACKWING_LAIR,
   Хроммагус: RaidId.BLACKWING_LAIR,
-  Нефариан: RaidId.BLACKWING_LAIR
+  Нефариан: RaidId.BLACKWING_LAIR,
+
+
+  "Верховный жрец Веноксис": RaidId.ZUL_GURUB,
+  "Верховная жрица Джеклик": RaidId.ZUL_GURUB,
+  "Верховная жрица Мар'ли": RaidId.ZUL_GURUB,
+  "Верховный жрец Текал": RaidId.ZUL_GURUB,
+  "Верховная жрица Арлокк": RaidId.ZUL_GURUB,
+  "Хаккар": RaidId.ZUL_GURUB,
+  "Мандокир Повелитель Крови": RaidId.ZUL_GURUB,
+  "Гри'лек": RaidId.ZUL_GURUB,
+  "Хазза'рах": RaidId.ZUL_GURUB,
+  "Ренатаки": RaidId.ZUL_GURUB,
+  "Вушулай": RaidId.ZUL_GURUB,
+  "Край безумия": RaidId.ZUL_GURUB,
+  "Газ'ранка": RaidId.ZUL_GURUB,
+  "Джин'до Проклинатель": RaidId.ZUL_GURUB,
 };
 
 const trashItems: { [key: string]: RaidId } = {
@@ -136,7 +168,15 @@ const trashItems: { [key: string]: RaidId } = {
   "19434": RaidId.BLACKWING_LAIR, // Band of Dark Dominion
   "19354": RaidId.BLACKWING_LAIR, // Draconic Avenger
   "19439": RaidId.BLACKWING_LAIR, // Interlaced Shadow Jerkin
-  "19438": RaidId.BLACKWING_LAIR // Ringo's Blizzard Boots
+  "19438": RaidId.BLACKWING_LAIR, // Ringo's Blizzard Boots
+
+
+  "19908": RaidId.ZUL_GURUB, // Sceptre of Smiting
+  "20258": RaidId.ZUL_GURUB, // Zulian Ceremonial Staff
+  "19921": RaidId.ZUL_GURUB, // Zulian Hacker
+  "20261": RaidId.ZUL_GURUB, // Shadow Panther Hide Belt
+  "20259": RaidId.ZUL_GURUB, // Shadow Panther Hide Gloves
+  "20263": RaidId.ZUL_GURUB, // Gurubashi Helm
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
