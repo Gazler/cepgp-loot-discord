@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useLocalStorage from "hooks/useLocalStorage";
 import { Raid } from "utils/trafficParser";
 import publish from "utils/publish";
 import BossCard from "components/Raid/BossCard";
@@ -8,11 +9,18 @@ type Props = Raid;
 
 const RaidWithLoot: React.FC<Props> = props => {
   const defaultButtonText = "Post Loot!";
-  const [webhookUrl, setWebhookUrl] = useState<string>("");
+  const [storedWebhook, setStoredWebhook] = useLocalStorage("webhook", "");
+  const [webhookUrl, setWebhookUrl] = useState<string>(storedWebhook);
   const [publishing, setPublishing] = useState<boolean>(false);
+  const [saveToLocalStorage, setSaveToLocalStorage] = useState<boolean>(true);
   const [publishedText, setPublishedText] = useState<string>(defaultButtonText);
 
   const publishLoot = () => {
+    if (saveToLocalStorage) {
+      setStoredWebhook(webhookUrl);
+    } else {
+      setStoredWebhook("");
+    }
     if (!publishing) {
       setPublishing(true);
       setPublishedText("Posting");
@@ -58,6 +66,14 @@ const RaidWithLoot: React.FC<Props> = props => {
       <div className="h-24 w-full flex-shrink-0 bg-purple-600 flex items-center pl-8 items-baseline pt-1">
         <div className="flex-grow"></div>
         <div className="h-8 mr-4">
+          <div className="inline mr-4 text-white cursor-pointer">
+            <label className="cursor-pointer" htmlFor="saveWebhook">Save Webhook URL</label>
+            <input type="checkbox"
+                   id="saveWebhook"
+                   className="ml-2 cursor-pointer"
+                   checked={saveToLocalStorage}
+                   onChange={() => { setSaveToLocalStorage((val) => !val) }} />
+          </div>
           <input
             className="p-2 mr-2"
             placeholder="Discord Webhook URL"
