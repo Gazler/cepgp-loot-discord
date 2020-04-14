@@ -3,6 +3,7 @@ import { RaidId } from "utils/trafficParser";
 import moltenCoreImg from "images/molten-core.jpg";
 import blackwingLairImg from "images/blackwing-lair.jpg";
 import onyxiaImg from "images/onyxia.jpg";
+import zulGurubImg from "images/zul-gurub.jpg";
 
 type Props = {
   name: string;
@@ -21,6 +22,10 @@ const coverImage = (raidId: RaidId): string => {
 
   if (raidId === RaidId.ONYXIA) {
     return onyxiaImg;
+  }
+
+  if (raidId === RaidId.ZUL_GURUB) {
+    return zulGurubImg;
   }
 
   return moltenCoreImg;

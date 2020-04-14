@@ -1,4 +1,5 @@
 import { Raid, RaidId, Loot } from "utils/trafficParser";
+const baseUrl = process.env.PUBLIC_URL === "" ? "https://cepgp-loot-discord.netlify.app" : process.env.PUBLIC_URL;
 
 const raidIcons = {
   [RaidId.MOLTEN_CORE]: {
@@ -14,6 +15,10 @@ const raidIcons = {
     icon:
       "https://vignette.wikia.nocookie.net/wowwiki/images/0/02/IconSmall_Onyxia.gif/revision/latest?cb=20090827161643",
     image: "https://art.hearthstonejson.com/v1/256x/EX1_562.jpg"
+  },
+  [RaidId.ZUL_GURUB]: {
+    icon: `${baseUrl}/images/hakkar-icon.png`,
+    image: `${baseUrl}/images/hakkar.jpg`
   }
 };
 
