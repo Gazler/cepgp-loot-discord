@@ -4,6 +4,8 @@ import moltenCoreImg from "images/molten-core.jpg";
 import blackwingLairImg from "images/blackwing-lair.jpg";
 import onyxiaImg from "images/onyxia.jpg";
 import zulGurubImg from "images/zul-gurub.jpg";
+import aq20Img from "images/aq20.jpg";
+import aq40Img from "images/aq40.jpg";
 
 type Props = {
   name: string;
@@ -26,6 +28,14 @@ const coverImage = (raidId: RaidId): string => {
 
   if (raidId === RaidId.ZUL_GURUB) {
     return zulGurubImg;
+  }
+
+  if (raidId === RaidId.RUINS_OF_AHN_QIRAJ) {
+    return aq20Img;
+  }
+
+  if (raidId === RaidId.TEMPLE_OF_AHN_QIRAJ) {
+    return aq40Img;
   }
 
   return moltenCoreImg;

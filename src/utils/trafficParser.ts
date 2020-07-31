@@ -58,7 +58,9 @@ export enum RaidId {
   ONYXIA = "Onyxia",
   MOLTEN_CORE = "Molten Core",
   BLACKWING_LAIR = "Blackwing Lair",
-  ZUL_GURUB = "Zul'Gurub"
+  ZUL_GURUB = "Zul'Gurub",
+  RUINS_OF_AHN_QIRAJ = "Ruins of Ahn'Qiraj",
+  TEMPLE_OF_AHN_QIRAJ = "Temple of Ahn'Qiraj"
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -99,6 +101,23 @@ const raidBosses: { [key: string]: RaidId } = {
   "Gahz'ranka": RaidId.ZUL_GURUB,
   "Jin'do the Hexxer": RaidId.ZUL_GURUB,
 
+  Kurinnaxx: RaidId.RUINS_OF_AHN_QIRAJ,
+  "General Rajaxx": RaidId.RUINS_OF_AHN_QIRAJ,
+  Moam: RaidId.RUINS_OF_AHN_QIRAJ,
+  "Buru the Gorger": RaidId.RUINS_OF_AHN_QIRAJ,
+  "Ayamiss the Hunter": RaidId.RUINS_OF_AHN_QIRAJ,
+  "Ossirian the Unscarred": RaidId.RUINS_OF_AHN_QIRAJ,
+
+  "The Prophet Skeram": RaidId.TEMPLE_OF_AHN_QIRAJ,
+  "Battleguard Sartura": RaidId.TEMPLE_OF_AHN_QIRAJ,
+  "Fankriss the Unyielding": RaidId.TEMPLE_OF_AHN_QIRAJ,
+  "Princess Huhuran": RaidId.TEMPLE_OF_AHN_QIRAJ,
+  "The Silithid Royalty": RaidId.TEMPLE_OF_AHN_QIRAJ,
+  Viscidus: RaidId.TEMPLE_OF_AHN_QIRAJ,
+  Ouro: RaidId.TEMPLE_OF_AHN_QIRAJ,
+  "The Twin Emperors": RaidId.TEMPLE_OF_AHN_QIRAJ,
+  "C'Thun": RaidId.TEMPLE_OF_AHN_QIRAJ,
+
   // ruRU
 
   Ониксия: RaidId.ONYXIA,
@@ -123,21 +142,20 @@ const raidBosses: { [key: string]: RaidId } = {
   Хроммагус: RaidId.BLACKWING_LAIR,
   Нефариан: RaidId.BLACKWING_LAIR,
 
-
   "Верховный жрец Веноксис": RaidId.ZUL_GURUB,
   "Верховная жрица Джеклик": RaidId.ZUL_GURUB,
   "Верховная жрица Мар'ли": RaidId.ZUL_GURUB,
   "Верховный жрец Текал": RaidId.ZUL_GURUB,
   "Верховная жрица Арлокк": RaidId.ZUL_GURUB,
-  "Хаккар": RaidId.ZUL_GURUB,
+  Хаккар: RaidId.ZUL_GURUB,
   "Мандокир Повелитель Крови": RaidId.ZUL_GURUB,
   "Гри'лек": RaidId.ZUL_GURUB,
   "Хазза'рах": RaidId.ZUL_GURUB,
-  "Ренатаки": RaidId.ZUL_GURUB,
-  "Вушулай": RaidId.ZUL_GURUB,
+  Ренатаки: RaidId.ZUL_GURUB,
+  Вушулай: RaidId.ZUL_GURUB,
   "Край безумия": RaidId.ZUL_GURUB,
   "Газ'ранка": RaidId.ZUL_GURUB,
-  "Джин'до Проклинатель": RaidId.ZUL_GURUB,
+  "Джин'до Проклинатель": RaidId.ZUL_GURUB
 };
 
 const trashItems: { [key: string]: RaidId } = {
@@ -170,13 +188,12 @@ const trashItems: { [key: string]: RaidId } = {
   "19439": RaidId.BLACKWING_LAIR, // Interlaced Shadow Jerkin
   "19438": RaidId.BLACKWING_LAIR, // Ringo's Blizzard Boots
 
-
   "19908": RaidId.ZUL_GURUB, // Sceptre of Smiting
   "20258": RaidId.ZUL_GURUB, // Zulian Ceremonial Staff
   "19921": RaidId.ZUL_GURUB, // Zulian Hacker
   "20261": RaidId.ZUL_GURUB, // Shadow Panther Hide Belt
   "20259": RaidId.ZUL_GURUB, // Shadow Panther Hide Gloves
-  "20263": RaidId.ZUL_GURUB, // Gurubashi Helm
+  "20263": RaidId.ZUL_GURUB // Gurubashi Helm
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
@@ -212,7 +229,9 @@ function isTrashItem(item: Item): boolean {
 declare var fengari: any;
 
 export function dataFromLua(input: string): any {
-  const traffic = window.fengari.load("TRAFFIC=false\n" + input + "\n return (TRAFFIC or CEPGP.Traffic)")();
+  const traffic = window.fengari.load(
+    "TRAFFIC=false\n" + input + "\n return (TRAFFIC or CEPGP.Traffic)"
+  )();
   let i = 1;
   let entry;
   const output = [];

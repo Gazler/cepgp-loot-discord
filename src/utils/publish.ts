@@ -1,5 +1,8 @@
 import { Raid, RaidId, Loot } from "utils/trafficParser";
-const baseUrl = process.env.PUBLIC_URL === "" ? "https://cepgp-loot-discord.netlify.app" : process.env.PUBLIC_URL;
+const baseUrl =
+  process.env.PUBLIC_URL === ""
+    ? "https://cepgp-loot-discord.netlify.app"
+    : process.env.PUBLIC_URL;
 
 const raidIcons = {
   [RaidId.MOLTEN_CORE]: {
@@ -19,6 +22,18 @@ const raidIcons = {
   [RaidId.ZUL_GURUB]: {
     icon: `${baseUrl}/images/hakkar-icon.png`,
     image: `${baseUrl}/images/hakkar.jpg`
+  },
+  [RaidId.RUINS_OF_AHN_QIRAJ]: {
+    icon:
+      "https://vignette.wikia.nocookie.net/wowwiki/images/c/c9/IconSmall_Horusath.gif/revision/latest?cb=20090307115004",
+    image:
+      "https://vignette.wikia.nocookie.net/wowwiki/images/7/74/Ossirian.jpg/revision/latest?cb=20060307175326"
+  },
+  [RaidId.TEMPLE_OF_AHN_QIRAJ]: {
+    icon:
+      "https://vignette.wikia.nocookie.net/wowwiki/images/3/36/IconSmall_OldGod.gif/revision/latest?cb=20071025202824",
+    image:
+      "https://vignette.wikia.nocookie.net/wowwiki/images/5/59/C%27Thun.jpg/revision/latest?cb=20160406234009"
   }
 };
 
@@ -32,7 +47,7 @@ function lootString(loot: Loot[]) {
   return lootString ? `${lootString}\n` : "*(No Loot)*\n";
 }
 
-export default function publish(url: string, raid: Raid)  {
+export default function publish(url: string, raid: Raid) {
   const fields = raid.bosses.map(boss => {
     return {
       name: `**${boss.name}**⠀⠀`,
