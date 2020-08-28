@@ -266,7 +266,10 @@ export function dataFromLua(input: string): any {
         trafficEntry.item_name = matches[2];
       }
     }
-    output.push(trafficEntry);
+
+    if (!(trafficEntry.item_name && trafficEntry.item_name.indexOf("Qiraji Resonating Crystal") !== -1)) {
+      output.push(trafficEntry);
+    }
   }
   return { epgp_traffic: output };
 }
