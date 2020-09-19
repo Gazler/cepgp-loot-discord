@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RaidCard from "components/Raid/RaidCard";
 import Uploader from "components/Uploader";
 import RaidWithLoot from "components/Raid/RaidWithLoot";
@@ -9,15 +9,21 @@ import "./tailwind.css";
 
 const App: React.FC = () => {
   const [raids, setRaids] = useState<Raid[]>([]);
+  const [upload, setUpload] = useState<string>("");
+  const [post13, setPost13] = useState<boolean>(false);
   const [currentRaid, selectRaid] = useState<Raid>();
   const [traffic, setTraffic] = useState<string>("");
-  const parseRaids = (upload: string) => {
-    const data = dataFromLua(upload);
-    const raids = parse(data);
-    setTraffic(JSON.stringify(data, null, 2));
-    setRaids(raids);
-    selectRaid(raids[0]);
-  };
+  useEffect(() => {
+    if (upload !== "") {
+      setTimeout(() => {
+        const data = dataFromLua(upload, post13);
+        const raids = parse(data);
+        setTraffic(JSON.stringify(data, null, 2));
+        setRaids(raids);
+        selectRaid(raids[0]);
+      }, 100);
+    }
+  }, [upload, post13]);
 
   const reset = () => {
     setTraffic("");
@@ -26,7 +32,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Uploader onUpload={parseRaids}>
+    <Uploader onUpload={setUpload}>
       <div className="h-screen flex flex-col bg-gray-200">
         <nav className="w-full flex items-center flex-wrap bg-purple-600 text-white">
           <div className="container mx-auto flex p-2">
@@ -50,11 +56,20 @@ const App: React.FC = () => {
         </nav>
         <div className="flex flex-grow h-full">
           <div className="flex flex-col flex-shrink-0 w-1/4 p-8 h-full">
+            <label className="md:w-2/3 block text-gray-500 font-bold cursor-pointer">
+              <input className="mr-2 leading-tight"
+                type="checkbox"
+                checked={post13}
+                onChange={(e) => setPost13(e.target.checked)} />
+              <span className="text-sm">
+                Use 1.13.0 format
+              </span>
+            </label>
             <textarea
               placeholder="paste CEPGP.lua here or drop file here"
               className="w-full flex-grow border p-2 border-gray-600 text-gray-800"
               value={traffic}
-              onChange={e => parseRaids(e.target.value)}
+              onChange={e => setUpload(e.target.value)}
             />
             <button
               onClick={() => reset()}

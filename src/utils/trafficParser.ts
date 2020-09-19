@@ -228,9 +228,13 @@ function isTrashItem(item: Item): boolean {
 
 declare var fengari: any;
 
-export function dataFromLua(input: string): any {
+export function dataFromLua(input: string, post13: boolean): any {
+  let returnVal = "(TRAFFIC or CEPGP.Traffic)";
+  if (post13) {
+    returnVal = "(CEPGP.Traffic or TRAFFIC)";
+  }
   const traffic = window.fengari.load(
-    "TRAFFIC=false\n" + input + "\n return (TRAFFIC or CEPGP.Traffic)"
+    "TRAFFIC=false\n" + input + "\n return " + returnVal
   )();
   let i = 1;
   let entry;
