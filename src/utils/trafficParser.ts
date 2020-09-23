@@ -193,7 +193,10 @@ const trashItems: { [key: string]: RaidId } = {
   "19921": RaidId.ZUL_GURUB, // Zulian Hacker
   "20261": RaidId.ZUL_GURUB, // Shadow Panther Hide Belt
   "20259": RaidId.ZUL_GURUB, // Shadow Panther Hide Gloves
-  "20263": RaidId.ZUL_GURUB // Gurubashi Helm
+  "20263": RaidId.ZUL_GURUB, // Gurubashi Helm
+
+  "21891": RaidId.TEMPLE_OF_AHN_QIRAJ, // Shard of the Fallen Star
+  "21837": RaidId.TEMPLE_OF_AHN_QIRAJ // Anubisath Warhammer
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
