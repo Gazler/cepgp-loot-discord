@@ -34,6 +34,12 @@ const raidIcons = {
       "https://vignette.wikia.nocookie.net/wowwiki/images/3/36/IconSmall_OldGod.gif/revision/latest?cb=20071025202824",
     image:
       "https://vignette.wikia.nocookie.net/wowwiki/images/5/59/C%27Thun.jpg/revision/latest?cb=20160406234009"
+  },
+  [RaidId.NAXXRAMAS]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/e/e9/IconSmall_Kel%27Thuzad.gif/revision/latest/scale-to-width-down/16?cb=20100816040058",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/9/9d/Kel%27thuzad_Ingame.png/revision/latest?cb=20091014162235"
   }
 };
 

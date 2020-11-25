@@ -60,7 +60,8 @@ export enum RaidId {
   BLACKWING_LAIR = "Blackwing Lair",
   ZUL_GURUB = "Zul'Gurub",
   RUINS_OF_AHN_QIRAJ = "Ruins of Ahn'Qiraj",
-  TEMPLE_OF_AHN_QIRAJ = "Temple of Ahn'Qiraj"
+  TEMPLE_OF_AHN_QIRAJ = "Temple of Ahn'Qiraj",
+  NAXXRAMAS = "Naxxramas"
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -117,6 +118,27 @@ const raidBosses: { [key: string]: RaidId } = {
   Ouro: RaidId.TEMPLE_OF_AHN_QIRAJ,
   "The Twin Emperors": RaidId.TEMPLE_OF_AHN_QIRAJ,
   "C'Thun": RaidId.TEMPLE_OF_AHN_QIRAJ,
+
+	"Anub'Rekhan": RaidId.NAXXRAMAS,
+	"Grand Widow Faerlina": RaidId.NAXXRAMAS,
+	"Maexxna": RaidId.NAXXRAMAS,
+
+	"Noth the Plaguebringer": RaidId.NAXXRAMAS,
+	"Heigan the Unclean": RaidId.NAXXRAMAS,
+	"Loatheb": RaidId.NAXXRAMAS,
+
+	"Instructor Razuvious": RaidId.NAXXRAMAS,
+	"Gothik the Harvester": RaidId.NAXXRAMAS,
+	"The Four Horsemen": RaidId.NAXXRAMAS,
+
+	"Patchwerk": RaidId.NAXXRAMAS,
+	"Grobbulus": RaidId.NAXXRAMAS,
+	"Gluth": RaidId.NAXXRAMAS,
+	"Thaddius": RaidId.NAXXRAMAS,
+
+	"Sapphiron": RaidId.NAXXRAMAS,
+	"Kel'Thuzad": RaidId.NAXXRAMAS,
+
 
   // ruRU
 
@@ -196,7 +218,18 @@ const trashItems: { [key: string]: RaidId } = {
   "20263": RaidId.ZUL_GURUB, // Gurubashi Helm
 
   "21891": RaidId.TEMPLE_OF_AHN_QIRAJ, // Shard of the Fallen Star
-  "21837": RaidId.TEMPLE_OF_AHN_QIRAJ // Anubisath Warhammer
+  "21837": RaidId.TEMPLE_OF_AHN_QIRAJ, // Anubisath Warhammer
+
+  "23667": RaidId.NAXXRAMAS, // Spaulders of the Grand Crusader
+  "23069": RaidId.NAXXRAMAS, // Necro-Knight's Garb
+  "23226": RaidId.NAXXRAMAS, // Ghoul Skin Tunic
+  "23666": RaidId.NAXXRAMAS, // Belt of the Grand Crusader
+  "23669": RaidId.NAXXRAMAS, // Leggings of the Grand Crusader
+  "23237": RaidId.NAXXRAMAS, // Ring of the Eternal Flame
+  "23238": RaidId.NAXXRAMAS, // Stygian Buckler
+  "23044": RaidId.NAXXRAMAS, // Harbinger of Doom
+  "23221": RaidId.NAXXRAMAS, // Misplaced Servo Arm
+
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
