@@ -40,6 +40,12 @@ const raidIcons = {
     "https://static.wikia.nocookie.net/wowpedia/images/e/e9/IconSmall_Kel%27Thuzad.gif/revision/latest/scale-to-width-down/16?cb=20100816040058",
     image:
     "https://static.wikia.nocookie.net/wowpedia/images/9/9d/Kel%27thuzad_Ingame.png/revision/latest?cb=20091014162235"
+  },
+  [RaidId.KARAZHAN]: {
+    icon:
+    "https://images.wikia.com/wowpedia/images/archive/c/c6/20200505171701%21IconSmall_Man%27ari_Male.gif",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/a/ad/Prince_Malchezaar_HS.jpg/revision/latest/scale-to-width-down/389?cb=20160810151000"
   }
 };
 

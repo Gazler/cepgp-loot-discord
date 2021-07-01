@@ -61,7 +61,9 @@ export enum RaidId {
   ZUL_GURUB = "Zul'Gurub",
   RUINS_OF_AHN_QIRAJ = "Ruins of Ahn'Qiraj",
   TEMPLE_OF_AHN_QIRAJ = "Temple of Ahn'Qiraj",
-  NAXXRAMAS = "Naxxramas"
+  NAXXRAMAS = "Naxxramas",
+
+  KARAZHAN = "Karazhan"
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -138,6 +140,19 @@ const raidBosses: { [key: string]: RaidId } = {
 
 	"Sapphiron": RaidId.NAXXRAMAS,
 	"Kel'Thuzad": RaidId.NAXXRAMAS,
+
+	"Attumen the Huntsman": RaidId.KARAZHAN,
+	"Moroes": RaidId.KARAZHAN,
+	"Maiden of Virtue": RaidId.KARAZHAN,
+	"Opera Hall": RaidId.KARAZHAN,
+	"The Curator": RaidId.KARAZHAN,
+	"Terestian Illhoof": RaidId.KARAZHAN,
+	"Shade of Aran": RaidId.KARAZHAN,
+	"Netherspite": RaidId.KARAZHAN,
+	"Chess Event": RaidId.KARAZHAN,
+	"Prince Malchezaar": RaidId.KARAZHAN,
+	"Nightbane": RaidId.KARAZHAN,
+
 
 
   // ruRU
@@ -229,6 +244,16 @@ const trashItems: { [key: string]: RaidId } = {
   "23238": RaidId.NAXXRAMAS, // Stygian Buckler
   "23044": RaidId.NAXXRAMAS, // Harbinger of Doom
   "23221": RaidId.NAXXRAMAS, // Misplaced Servo Arm
+
+  "30642": RaidId.KARAZHAN, //Drape of the Righteous
+  "30666": RaidId.KARAZHAN, //Ritssyn's Lost Pendant
+  "30667": RaidId.KARAZHAN, //Ring of Unrelenting Storms
+  "30668": RaidId.KARAZHAN, //Grasp of the Dead
+  "30673": RaidId.KARAZHAN, //Inferno Waist Cord
+  "30644": RaidId.KARAZHAN, //Grips of Deftness
+  "30674": RaidId.KARAZHAN, //Zierhut's Lost Treads
+  "30643": RaidId.KARAZHAN, //Belt of the Tracker
+  "30641": RaidId.KARAZHAN, //Boots of Elusion
 
 };
 
