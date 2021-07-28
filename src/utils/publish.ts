@@ -46,7 +46,20 @@ const raidIcons = {
     "https://images.wikia.com/wowpedia/images/archive/c/c6/20200505171701%21IconSmall_Man%27ari_Male.gif",
     image:
     "https://static.wikia.nocookie.net/wowpedia/images/a/ad/Prince_Malchezaar_HS.jpg/revision/latest/scale-to-width-down/389?cb=20160810151000"
-  }
+    },
+  [RaidId.GRUULS_LAIR]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/e/ef/IconSmall_Gronn.gif/revision/latest/scale-to-width-down/16?cb=20070804111913",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/e/ea/GruulClose.jpg/revision/latest/scale-to-width-down/767?cb=20091228180321"
+    },
+
+  [RaidId.MAGTHERIDONS_LAIR]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/b/b1/IconSmall_PitLord.gif/revision/latest?cb=20170811004859",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/e/ed/Magtheridon_unleashed_TCG.jpg/revision/latest/scale-to-width-down/1000?cb=20160503214840"
+    }
 };
 
 function lootString(loot: Loot[]) {

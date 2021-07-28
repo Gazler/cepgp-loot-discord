@@ -63,7 +63,9 @@ export enum RaidId {
   TEMPLE_OF_AHN_QIRAJ = "Temple of Ahn'Qiraj",
   NAXXRAMAS = "Naxxramas",
 
-  KARAZHAN = "Karazhan"
+  KARAZHAN = "Karazhan",
+  GRUULS_LAIR = "Gruul's Lair",
+  MAGTHERIDONS_LAIR = "Magtheridon's Lair"
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -153,6 +155,10 @@ const raidBosses: { [key: string]: RaidId } = {
 	"Prince Malchezaar": RaidId.KARAZHAN,
 	"Nightbane": RaidId.KARAZHAN,
 
+  "High King Maulgar": RaidId.GRUULS_LAIR,
+  "Gruul the Dragonkiller": RaidId.GRUULS_LAIR,
+
+  "Magtheridon": RaidId.MAGTHERIDONS_LAIR,
 
 
   // ruRU

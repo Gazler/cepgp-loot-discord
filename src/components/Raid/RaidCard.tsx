@@ -8,6 +8,8 @@ import aq20Img from "images/aq20.jpg";
 import aq40Img from "images/aq40.jpg";
 import naxxramasImg from "images/naxxramas.jpg";
 import karaImg from "images/karazhan.jpg";
+import gruulImg from "images/gruul.jpg";
+import magtheridonImg from "images/magtheridon.jpg";
 
 type Props = {
   name: string;
@@ -46,6 +48,14 @@ const coverImage = (raidId: RaidId): string => {
 
   if (raidId === RaidId.KARAZHAN) {
     return karaImg;
+  }
+
+  if (raidId === RaidId.GRUULS_LAIR) {
+    return gruulImg;
+  }
+
+  if (raidId === RaidId.MAGTHERIDONS_LAIR) {
+    return magtheridonImg;
   }
 
   return moltenCoreImg;
