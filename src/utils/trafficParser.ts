@@ -65,7 +65,10 @@ export enum RaidId {
 
   KARAZHAN = "Karazhan",
   GRUULS_LAIR = "Gruul's Lair",
-  MAGTHERIDONS_LAIR = "Magtheridon's Lair"
+  MAGTHERIDONS_LAIR = "Magtheridon's Lair",
+
+  SERPENTSHRINE_CAVERN = "Serpentshrine Cavern",
+  THE_EYE = "The Eye",
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -160,6 +163,17 @@ const raidBosses: { [key: string]: RaidId } = {
 
   "Magtheridon": RaidId.MAGTHERIDONS_LAIR,
 
+	"Hydross the Unstable": RaidId.SERPENTSHRINE_CAVERN,
+	"The Lurker Below": RaidId.SERPENTSHRINE_CAVERN,
+	"Leotheras the Blind": RaidId.SERPENTSHRINE_CAVERN,
+	"Fathom-Lord Karathress": RaidId.SERPENTSHRINE_CAVERN,
+	"Morogrim Tidewalker": RaidId.SERPENTSHRINE_CAVERN,
+	"Lady Vashj": RaidId.SERPENTSHRINE_CAVERN,
+
+	"Al'ar": RaidId.THE_EYE,
+	"Void Reaver": RaidId.THE_EYE,
+	"High Astromancer Solarian": RaidId.THE_EYE,
+	"Kael'thas Sunstrider": RaidId.THE_EYE,
 
   // ruRU
 
@@ -260,6 +274,21 @@ const trashItems: { [key: string]: RaidId } = {
   "30674": RaidId.KARAZHAN, //Zierhut's Lost Treads
   "30643": RaidId.KARAZHAN, //Belt of the Tracker
   "30641": RaidId.KARAZHAN, //Boots of Elusion
+
+  "30027": RaidId.SERPENTSHRINE_CAVERN, // Boots of Courage Unending
+  "30022": RaidId.SERPENTSHRINE_CAVERN, // Pendant of the Perilous
+  "30021": RaidId.SERPENTSHRINE_CAVERN, // Wildfury Greatstaff
+  "30025": RaidId.SERPENTSHRINE_CAVERN, // Serpentshrine Shuriken
+  "30023": RaidId.SERPENTSHRINE_CAVERN, // Totem of the Maelstrom
+  "30620": RaidId.SERPENTSHRINE_CAVERN, // Spyglass of the Hidden Fleet
+  "30183": RaidId.SERPENTSHRINE_CAVERN, // Nether Vortex
+
+  "30024": RaidId.THE_EYE, // Mantle of the Elven Kings
+  "30020": RaidId.THE_EYE, // Fire-Cord of the Magus
+  "30029": RaidId.THE_EYE, // Bark-Gloves of Ancient Wisdom
+  "30026": RaidId.THE_EYE, // Bands of the Celestial Archer
+  "30030": RaidId.THE_EYE, // Girdle of Fallen Stars
+  "30028": RaidId.THE_EYE, // Seventh Ring of the Tirisfalen
 
 };
 

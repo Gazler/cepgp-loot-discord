@@ -59,7 +59,21 @@ const raidIcons = {
     "https://static.wikia.nocookie.net/wowpedia/images/b/b1/IconSmall_PitLord.gif/revision/latest?cb=20170811004859",
     image:
     "https://static.wikia.nocookie.net/wowpedia/images/e/ed/Magtheridon_unleashed_TCG.jpg/revision/latest/scale-to-width-down/1000?cb=20160503214840"
-    }
+  },
+
+  [RaidId.SERPENTSHRINE_CAVERN]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/b/b9/IconSmall_Vashj.gif/revision/latest/scale-to-width-down/16?cb=20200413162055",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/a/a3/200px-Lady_Vashj.PNG/revision/latest/scale-to-width-down/507?cb=20160731110603"
+  },
+
+  [RaidId.THE_EYE]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/2/20/IconSmall_Kael%27thas.gif/revision/latest/scale-to-width-down/16?cb=20200520160455",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/6/62/Bloodmage_Kael%27thas.jpg/revision/latest/scale-to-width-down/682?cb=20210402103754"
+  }
 };
 
 function lootString(loot: Loot[]) {

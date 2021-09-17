@@ -10,6 +10,8 @@ import naxxramasImg from "images/naxxramas.jpg";
 import karaImg from "images/karazhan.jpg";
 import gruulImg from "images/gruul.jpg";
 import magtheridonImg from "images/magtheridon.jpg";
+import sscImg from "images/ssc.jpg";
+import tkImg from "images/tk.jpg";
 
 type Props = {
   name: string;
@@ -56,6 +58,14 @@ const coverImage = (raidId: RaidId): string => {
 
   if (raidId === RaidId.MAGTHERIDONS_LAIR) {
     return magtheridonImg;
+  }
+
+  if (raidId === RaidId.SERPENTSHRINE_CAVERN) {
+    return sscImg;
+  }
+
+  if (raidId === RaidId.THE_EYE) {
+    return tkImg;
   }
 
   return moltenCoreImg;
