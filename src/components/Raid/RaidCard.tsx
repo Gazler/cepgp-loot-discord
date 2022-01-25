@@ -12,6 +12,8 @@ import gruulImg from "images/gruul.jpg";
 import magtheridonImg from "images/magtheridon.jpg";
 import sscImg from "images/ssc.jpg";
 import tkImg from "images/tk.jpg";
+import hyjalImg from "images/hyjal.jpg";
+import btImg from "images/bt.jpg";
 
 type Props = {
   name: string;
@@ -66,6 +68,14 @@ const coverImage = (raidId: RaidId): string => {
 
   if (raidId === RaidId.THE_EYE) {
     return tkImg;
+  }
+
+  if (raidId === RaidId.BATTLE_FOR_MOUNT_HYJAL) {
+    return hyjalImg;
+  }
+
+  if (raidId === RaidId.BLACK_TEMPLE) {
+    return btImg;
   }
 
   return moltenCoreImg;
