@@ -73,6 +73,20 @@ const raidIcons = {
     "https://static.wikia.nocookie.net/wowpedia/images/2/20/IconSmall_Kael%27thas.gif/revision/latest/scale-to-width-down/16?cb=20200520160455",
     image:
     "https://static.wikia.nocookie.net/wowpedia/images/6/62/Bloodmage_Kael%27thas.jpg/revision/latest/scale-to-width-down/682?cb=20210402103754"
+  },
+
+  [RaidId.BATTLE_FOR_MOUNT_HYJAL]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/a/ad/IconSmall_Archimonde.gif/revision/latest?cb=20200519181227",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/8/8d/Archimonde_the_Defiler.jpg/revision/latest/scale-to-width-down/293?cb=20120921052506"
+  },
+
+  [RaidId.BLACK_TEMPLE]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/d/d5/IconSmall_Illidan.gif/revision/latest?cb=20211211102517",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/e/e0/Illidan_the_Betrayer.jpg/revision/latest?cb=20150907112817"
   }
 };
 

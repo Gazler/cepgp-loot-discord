@@ -69,6 +69,9 @@ export enum RaidId {
 
   SERPENTSHRINE_CAVERN = "Serpentshrine Cavern",
   THE_EYE = "The Eye",
+
+  BATTLE_FOR_MOUNT_HYJAL = "Battle for Mount Hyjal",
+  BLACK_TEMPLE = "Black Temple",
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -174,6 +177,22 @@ const raidBosses: { [key: string]: RaidId } = {
 	"Void Reaver": RaidId.THE_EYE,
 	"High Astromancer Solarian": RaidId.THE_EYE,
 	"Kael'thas Sunstrider": RaidId.THE_EYE,
+
+	"Rage Winterchill": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+	"Anetheron": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+	"Kaz'rogal": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+	"Azgalor": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+	"Archimonde": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+
+	"High Warlord Naj'entus": RaidId.BLACK_TEMPLE,
+	"Supremus": RaidId.BLACK_TEMPLE,
+	"Shade of Akama": RaidId.BLACK_TEMPLE,
+	"Teron Gorefiend": RaidId.BLACK_TEMPLE,
+	"Gurtogg Bloodboil": RaidId.BLACK_TEMPLE,
+	"Reliquary of Souls": RaidId.BLACK_TEMPLE,
+	"Mother Shahraz": RaidId.BLACK_TEMPLE,
+	"The Illidari Council": RaidId.BLACK_TEMPLE,
+	"Illidan Stormrage": RaidId.BLACK_TEMPLE,
 
   // ruRU
 
@@ -290,6 +309,25 @@ const trashItems: { [key: string]: RaidId } = {
   "30030": RaidId.THE_EYE, // Girdle of Fallen Stars
   "30028": RaidId.THE_EYE, // Seventh Ring of the Tirisfalen
 
+  "32590": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Nethervoid Cloak
+  "34010": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Pepe's Shroud of Pacification
+  "32591": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Choker of Serrated Blades
+  "32589": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Hellfire-Encased Pendant
+  "32609": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Boots of the Divine Light
+  "32592": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Chestguard of Relentless Storms
+  "32946": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Claw of Molten Fury
+  "32945": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Fist of Molten Fury
+  "34009": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Hammer of Judgement
+
+	"32593": RaidId.BLACK_TEMPLE, //Treads of the Den Mother
+  "32606": RaidId.BLACK_TEMPLE, //Girdle of the Lightbearer
+	"32608": RaidId.BLACK_TEMPLE, //Pillager's Gauntlets
+  "34011": RaidId.BLACK_TEMPLE, //Illidari Runeshield
+  "34012": RaidId.BLACK_TEMPLE, //Shroud of the Final Stand
+  "32526": RaidId.BLACK_TEMPLE, //Band of Devastation
+  "32528": RaidId.BLACK_TEMPLE, //Blessed Band of Karabor
+  "32527": RaidId.BLACK_TEMPLE, //Ring of Ancient Knowledge
+  "32943": RaidId.BLACK_TEMPLE, //Swiftsteel Bludgeon
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {
