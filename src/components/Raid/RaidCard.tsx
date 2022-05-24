@@ -14,6 +14,7 @@ import sscImg from "images/ssc.jpg";
 import tkImg from "images/tk.jpg";
 import hyjalImg from "images/hyjal.jpg";
 import btImg from "images/bt.jpg";
+import sunwellImg from "images/sunwell.jpg";
 
 type Props = {
   name: string;
@@ -76,6 +77,10 @@ const coverImage = (raidId: RaidId): string => {
 
   if (raidId === RaidId.BLACK_TEMPLE) {
     return btImg;
+  }
+
+  if (raidId === RaidId.SUNWELL_PLATEAU) {
+    return sunwellImg;
   }
 
   return moltenCoreImg;

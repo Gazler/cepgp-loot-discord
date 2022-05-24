@@ -72,6 +72,8 @@ export enum RaidId {
 
   BATTLE_FOR_MOUNT_HYJAL = "Battle for Mount Hyjal",
   BLACK_TEMPLE = "Black Temple",
+
+  SUNWELL_PLATEAU = "Sunwell Plateau",
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -193,6 +195,14 @@ const raidBosses: { [key: string]: RaidId } = {
 	"Mother Shahraz": RaidId.BLACK_TEMPLE,
 	"The Illidari Council": RaidId.BLACK_TEMPLE,
 	"Illidan Stormrage": RaidId.BLACK_TEMPLE,
+
+
+	"Kalecgos": RaidId.SUNWELL_PLATEAU,
+	"Brutallus": RaidId.SUNWELL_PLATEAU,
+	"Felmyst": RaidId.SUNWELL_PLATEAU,
+	"Eredar Twins": RaidId.SUNWELL_PLATEAU,
+	"M'uru": RaidId.SUNWELL_PLATEAU,
+	"Kil'jaeden": RaidId.SUNWELL_PLATEAU,
 
   // ruRU
 
@@ -328,6 +338,16 @@ const trashItems: { [key: string]: RaidId } = {
   "32528": RaidId.BLACK_TEMPLE, //Blessed Band of Karabor
   "32527": RaidId.BLACK_TEMPLE, //Ring of Ancient Knowledge
   "32943": RaidId.BLACK_TEMPLE, //Swiftsteel Bludgeon
+
+  "34349": RaidId.SUNWELL_PLATEAU, // Blade of Life's Inevitability
+  "34350": RaidId.SUNWELL_PLATEAU, // Gauntlets of the Ancient Shadowmoon
+  "34346": RaidId.SUNWELL_PLATEAU, // Mounting Vengeance
+  "35733": RaidId.SUNWELL_PLATEAU, // Ring of Harmonic Beauty
+  "34183": RaidId.SUNWELL_PLATEAU, // Shivering Felspine
+  "34351": RaidId.SUNWELL_PLATEAU, // Tranquil Majesty Wraps
+  "34348": RaidId.SUNWELL_PLATEAU, // Wand of Cleansing Light
+  "34347": RaidId.SUNWELL_PLATEAU, // Wand of the Demonsoul
+
 };
 
 function isNewRaid(currentRaids: { [key: string]: Raid }, newRaid: Raid): boolean {

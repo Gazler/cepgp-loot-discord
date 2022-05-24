@@ -87,6 +87,14 @@ const raidIcons = {
     "https://static.wikia.nocookie.net/wowpedia/images/d/d5/IconSmall_Illidan.gif/revision/latest?cb=20211211102517",
     image:
     "https://static.wikia.nocookie.net/wowpedia/images/e/e0/Illidan_the_Betrayer.jpg/revision/latest?cb=20150907112817"
+  },
+
+
+  [RaidId.SUNWELL_PLATEAU]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/2/26/IconSmall_Kil%27jaeden.gif/revision/latest?cb=20200519174410",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/8/81/Kiljaeden_Sunwell.jpg/revision/latest/scale-to-width-down/810?cb=20190615115315"
   }
 };
 
