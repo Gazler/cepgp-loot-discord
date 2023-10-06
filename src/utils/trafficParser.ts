@@ -74,6 +74,8 @@ export enum RaidId {
   BLACK_TEMPLE = "Black Temple",
 
   SUNWELL_PLATEAU = "Sunwell Plateau",
+
+  ICECROWN_CITADEL = "Icecrown Citadel",
 }
 
 const raidBosses: { [key: string]: RaidId } = {
@@ -203,6 +205,20 @@ const raidBosses: { [key: string]: RaidId } = {
   "Eredar Twins": RaidId.SUNWELL_PLATEAU,
   "M'uru": RaidId.SUNWELL_PLATEAU,
   "Kil'jaeden": RaidId.SUNWELL_PLATEAU,
+
+  "Lord Marrowgar": RaidId.ICECROWN_CITADEL,
+  "Lady Deathwhisper": RaidId.ICECROWN_CITADEL,
+  "Icecrown Gunship Battle": RaidId.ICECROWN_CITADEL,
+  "Deathbringer Saurfang": RaidId.ICECROWN_CITADEL,
+  "Festergut": RaidId.ICECROWN_CITADEL,
+  "Rotface": RaidId.ICECROWN_CITADEL,
+  "Professor Putricide": RaidId.ICECROWN_CITADEL,
+  "Blood Council": RaidId.ICECROWN_CITADEL,
+  "Queen Lana'thel": RaidId.ICECROWN_CITADEL,
+  "Valithria Dreamwalker": RaidId.ICECROWN_CITADEL,
+  "Sindragosa": RaidId.ICECROWN_CITADEL,
+  "The Lich King": RaidId.ICECROWN_CITADEL,
+
 
   // ruRU
 
@@ -347,6 +363,14 @@ const trashItems: { [key: string]: RaidId } = {
   "34351": RaidId.SUNWELL_PLATEAU, // Tranquil Majesty Wraps
   "34348": RaidId.SUNWELL_PLATEAU, // Wand of Cleansing Light
   "34347": RaidId.SUNWELL_PLATEAU, // Wand of the Demonsoul
+
+  "50451": RaidId.ICECROWN_CITADEL, // Belt of the Lonely Noble
+  "50447": RaidId.ICECROWN_CITADEL, // Harbinger's Bone Band
+  "50775": RaidId.ICECROWN_CITADEL, // Leggings of Dubious Charms
+  "50453": RaidId.ICECROWN_CITADEL, // Ring of Rotting Sinew
+  "50444": RaidId.ICECROWN_CITADEL, // Rowan's Rifle of Silver Bullets
+  "50449": RaidId.ICECROWN_CITADEL, // Stifened Corpse Shoulderpads
+  "50452": RaidId.ICECROWN_CITADEL, // Wodin's Lucky Necklace
 
 };
 

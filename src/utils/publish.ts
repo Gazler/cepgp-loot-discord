@@ -95,6 +95,13 @@ const raidIcons = {
     "https://static.wikia.nocookie.net/wowpedia/images/2/26/IconSmall_Kil%27jaeden.gif/revision/latest?cb=20200519174410",
     image:
     "https://static.wikia.nocookie.net/wowpedia/images/8/81/Kiljaeden_Sunwell.jpg/revision/latest/scale-to-width-down/810?cb=20190615115315"
+  },
+
+  [RaidId.ICECROWN_CITADEL]: {
+    icon:
+    "https://static.wikia.nocookie.net/wowpedia/images/d/d5/IconSmall_LichKing.gif/revision/latest?cb=20090307151644",
+    image:
+    "https://static.wikia.nocookie.net/wowpedia/images/7/72/One_True_King.jpg/revision/latest?cb=20180502213833"
   }
 };
 
