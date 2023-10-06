@@ -131,78 +131,78 @@ const raidBosses: { [key: string]: RaidId } = {
   "The Twin Emperors": RaidId.TEMPLE_OF_AHN_QIRAJ,
   "C'Thun": RaidId.TEMPLE_OF_AHN_QIRAJ,
 
-	"Anub'Rekhan": RaidId.NAXXRAMAS,
-	"Grand Widow Faerlina": RaidId.NAXXRAMAS,
-	"Maexxna": RaidId.NAXXRAMAS,
+  "Anub'Rekhan": RaidId.NAXXRAMAS,
+  "Grand Widow Faerlina": RaidId.NAXXRAMAS,
+  "Maexxna": RaidId.NAXXRAMAS,
 
-	"Noth the Plaguebringer": RaidId.NAXXRAMAS,
-	"Heigan the Unclean": RaidId.NAXXRAMAS,
-	"Loatheb": RaidId.NAXXRAMAS,
+  "Noth the Plaguebringer": RaidId.NAXXRAMAS,
+  "Heigan the Unclean": RaidId.NAXXRAMAS,
+  "Loatheb": RaidId.NAXXRAMAS,
 
-	"Instructor Razuvious": RaidId.NAXXRAMAS,
-	"Gothik the Harvester": RaidId.NAXXRAMAS,
-	"The Four Horsemen": RaidId.NAXXRAMAS,
+  "Instructor Razuvious": RaidId.NAXXRAMAS,
+  "Gothik the Harvester": RaidId.NAXXRAMAS,
+  "The Four Horsemen": RaidId.NAXXRAMAS,
 
-	"Patchwerk": RaidId.NAXXRAMAS,
-	"Grobbulus": RaidId.NAXXRAMAS,
-	"Gluth": RaidId.NAXXRAMAS,
-	"Thaddius": RaidId.NAXXRAMAS,
+  "Patchwerk": RaidId.NAXXRAMAS,
+  "Grobbulus": RaidId.NAXXRAMAS,
+  "Gluth": RaidId.NAXXRAMAS,
+  "Thaddius": RaidId.NAXXRAMAS,
 
-	"Sapphiron": RaidId.NAXXRAMAS,
-	"Kel'Thuzad": RaidId.NAXXRAMAS,
+  "Sapphiron": RaidId.NAXXRAMAS,
+  "Kel'Thuzad": RaidId.NAXXRAMAS,
 
-	"Attumen the Huntsman": RaidId.KARAZHAN,
-	"Moroes": RaidId.KARAZHAN,
-	"Maiden of Virtue": RaidId.KARAZHAN,
-	"Opera Hall": RaidId.KARAZHAN,
-	"The Curator": RaidId.KARAZHAN,
-	"Terestian Illhoof": RaidId.KARAZHAN,
-	"Shade of Aran": RaidId.KARAZHAN,
-	"Netherspite": RaidId.KARAZHAN,
-	"Chess Event": RaidId.KARAZHAN,
-	"Prince Malchezaar": RaidId.KARAZHAN,
-	"Nightbane": RaidId.KARAZHAN,
+  "Attumen the Huntsman": RaidId.KARAZHAN,
+  "Moroes": RaidId.KARAZHAN,
+  "Maiden of Virtue": RaidId.KARAZHAN,
+  "Opera Hall": RaidId.KARAZHAN,
+  "The Curator": RaidId.KARAZHAN,
+  "Terestian Illhoof": RaidId.KARAZHAN,
+  "Shade of Aran": RaidId.KARAZHAN,
+  "Netherspite": RaidId.KARAZHAN,
+  "Chess Event": RaidId.KARAZHAN,
+  "Prince Malchezaar": RaidId.KARAZHAN,
+  "Nightbane": RaidId.KARAZHAN,
 
   "High King Maulgar": RaidId.GRUULS_LAIR,
   "Gruul the Dragonkiller": RaidId.GRUULS_LAIR,
 
   "Magtheridon": RaidId.MAGTHERIDONS_LAIR,
 
-	"Hydross the Unstable": RaidId.SERPENTSHRINE_CAVERN,
-	"The Lurker Below": RaidId.SERPENTSHRINE_CAVERN,
-	"Leotheras the Blind": RaidId.SERPENTSHRINE_CAVERN,
-	"Fathom-Lord Karathress": RaidId.SERPENTSHRINE_CAVERN,
-	"Morogrim Tidewalker": RaidId.SERPENTSHRINE_CAVERN,
-	"Lady Vashj": RaidId.SERPENTSHRINE_CAVERN,
+  "Hydross the Unstable": RaidId.SERPENTSHRINE_CAVERN,
+  "The Lurker Below": RaidId.SERPENTSHRINE_CAVERN,
+  "Leotheras the Blind": RaidId.SERPENTSHRINE_CAVERN,
+  "Fathom-Lord Karathress": RaidId.SERPENTSHRINE_CAVERN,
+  "Morogrim Tidewalker": RaidId.SERPENTSHRINE_CAVERN,
+  "Lady Vashj": RaidId.SERPENTSHRINE_CAVERN,
 
-	"Al'ar": RaidId.THE_EYE,
-	"Void Reaver": RaidId.THE_EYE,
-	"High Astromancer Solarian": RaidId.THE_EYE,
-	"Kael'thas Sunstrider": RaidId.THE_EYE,
+  "Al'ar": RaidId.THE_EYE,
+  "Void Reaver": RaidId.THE_EYE,
+  "High Astromancer Solarian": RaidId.THE_EYE,
+  "Kael'thas Sunstrider": RaidId.THE_EYE,
 
-	"Rage Winterchill": RaidId.BATTLE_FOR_MOUNT_HYJAL,
-	"Anetheron": RaidId.BATTLE_FOR_MOUNT_HYJAL,
-	"Kaz'rogal": RaidId.BATTLE_FOR_MOUNT_HYJAL,
-	"Azgalor": RaidId.BATTLE_FOR_MOUNT_HYJAL,
-	"Archimonde": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+  "Rage Winterchill": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+  "Anetheron": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+  "Kaz'rogal": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+  "Azgalor": RaidId.BATTLE_FOR_MOUNT_HYJAL,
+  "Archimonde": RaidId.BATTLE_FOR_MOUNT_HYJAL,
 
-	"High Warlord Naj'entus": RaidId.BLACK_TEMPLE,
-	"Supremus": RaidId.BLACK_TEMPLE,
-	"Shade of Akama": RaidId.BLACK_TEMPLE,
-	"Teron Gorefiend": RaidId.BLACK_TEMPLE,
-	"Gurtogg Bloodboil": RaidId.BLACK_TEMPLE,
-	"Reliquary of Souls": RaidId.BLACK_TEMPLE,
-	"Mother Shahraz": RaidId.BLACK_TEMPLE,
-	"The Illidari Council": RaidId.BLACK_TEMPLE,
-	"Illidan Stormrage": RaidId.BLACK_TEMPLE,
+  "High Warlord Naj'entus": RaidId.BLACK_TEMPLE,
+  "Supremus": RaidId.BLACK_TEMPLE,
+  "Shade of Akama": RaidId.BLACK_TEMPLE,
+  "Teron Gorefiend": RaidId.BLACK_TEMPLE,
+  "Gurtogg Bloodboil": RaidId.BLACK_TEMPLE,
+  "Reliquary of Souls": RaidId.BLACK_TEMPLE,
+  "Mother Shahraz": RaidId.BLACK_TEMPLE,
+  "The Illidari Council": RaidId.BLACK_TEMPLE,
+  "Illidan Stormrage": RaidId.BLACK_TEMPLE,
 
 
-	"Kalecgos": RaidId.SUNWELL_PLATEAU,
-	"Brutallus": RaidId.SUNWELL_PLATEAU,
-	"Felmyst": RaidId.SUNWELL_PLATEAU,
-	"Eredar Twins": RaidId.SUNWELL_PLATEAU,
-	"M'uru": RaidId.SUNWELL_PLATEAU,
-	"Kil'jaeden": RaidId.SUNWELL_PLATEAU,
+  "Kalecgos": RaidId.SUNWELL_PLATEAU,
+  "Brutallus": RaidId.SUNWELL_PLATEAU,
+  "Felmyst": RaidId.SUNWELL_PLATEAU,
+  "Eredar Twins": RaidId.SUNWELL_PLATEAU,
+  "M'uru": RaidId.SUNWELL_PLATEAU,
+  "Kil'jaeden": RaidId.SUNWELL_PLATEAU,
 
   // ruRU
 
@@ -329,9 +329,9 @@ const trashItems: { [key: string]: RaidId } = {
   "32945": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Fist of Molten Fury
   "34009": RaidId.BATTLE_FOR_MOUNT_HYJAL, //Hammer of Judgement
 
-	"32593": RaidId.BLACK_TEMPLE, //Treads of the Den Mother
+  "32593": RaidId.BLACK_TEMPLE, //Treads of the Den Mother
   "32606": RaidId.BLACK_TEMPLE, //Girdle of the Lightbearer
-	"32608": RaidId.BLACK_TEMPLE, //Pillager's Gauntlets
+  "32608": RaidId.BLACK_TEMPLE, //Pillager's Gauntlets
   "34011": RaidId.BLACK_TEMPLE, //Illidari Runeshield
   "34012": RaidId.BLACK_TEMPLE, //Shroud of the Final Stand
   "32526": RaidId.BLACK_TEMPLE, //Band of Devastation
