@@ -1,3 +1,4 @@
+import { HEROIC_ICC_ITEMS } from "utils/heroicLoot";
 export type TrafficItem = {
   target_name: string;
   issuer_name: string;
@@ -522,6 +523,12 @@ export default function parse(input: Traffic): Raid[] {
               pendingTrash[leader].push(loot);
             }
           } else {
+            if (isHeroicItem(item.id)) {
+              let boss = currentRaids[leader].bosses[currentRaids[leader].bosses.length - 1];
+              if (boss.name.indexOf("(HC)") === -1) {
+                boss.name = boss.name + " (HC)";
+              }
+            }
             currentRaids[leader].bosses[currentRaids[leader].bosses.length - 1].loot.push(loot);
           }
         }
@@ -530,6 +537,10 @@ export default function parse(input: Traffic): Raid[] {
       return acc;
     }, new Array<Raid>())
     .reverse();
+}
+
+function isHeroicItem(id: number): Boolean {
+  return HEROIC_ICC_ITEMS.indexOf(id) !== -1;
 }
 
 function getBossName({ action }: TrafficItem): string {
