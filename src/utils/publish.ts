@@ -109,7 +109,7 @@ function lootString(loot: Loot[]) {
   const lootString = loot.reduce((acc, loot) => {
     return (
       acc +
-      `[${loot.item.name}](https://tbc.wowhead.com/item=${loot.item.id})\n\`${loot.cost}\` **${loot.receiver}**\n`
+      `[${loot.item.name}](https://wotlk.wowhead.com/item=${loot.item.id})\n\`${loot.cost}\` **${loot.receiver}**\n`
     );
   }, "");
   return lootString ? `${lootString}\n` : "*(No Loot)*\n";
